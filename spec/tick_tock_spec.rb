@@ -9,9 +9,7 @@ describe Tetris::TickTock do
     end
 
     context 'any of the columns on the row beneath the current block are occupied' do
-      it 'anchors the falling block'
-      it 'moves the upcoming piece to the new current piece'
-      it 'takes a piece from the queue for the new upcoming piece'
+      it 'anchors the block'
     end
   end
 
