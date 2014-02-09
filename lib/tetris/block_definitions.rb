@@ -7,6 +7,8 @@ module Tetris
     def j_block() JBlock end
     def o_block() OBlock end
 
+    def dot_block(colour) DotBlocks.fetch colour end
+
 
     IBlock = BlockDefinition.new do |block|
       block.name = 'I Block'
@@ -48,6 +50,10 @@ module Tetris
         [:yellow, :yellow],
       ]
     end
+
+    DotBlocks = {
+      blue: BlockDefinition.new(name: 'Blue Dot Block', rotations: [[:blue]]),
+    }
   end
 end
 
