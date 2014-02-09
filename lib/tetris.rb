@@ -1,6 +1,7 @@
 require 'tetris/add_block'
 require 'tetris/anchor_block'
 require 'tetris/block_definitions'
+require 'tetris/block_queue'
 require 'tetris/board'
 require 'tetris/decompose_block'
 require 'tetris/move_block'
