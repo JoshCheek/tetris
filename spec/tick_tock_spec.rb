@@ -10,6 +10,7 @@ describe Tetris::TickTock do
 
     context 'any of the columns on the row beneath the current block are occupied' do
       it 'anchors the block'
+      it 'applies any row removals'
     end
   end
 
