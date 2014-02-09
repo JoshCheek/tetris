@@ -7,5 +7,6 @@ module Tetris
     include MoveBlock
     include TickTock
     include DecomposeBlock
+    include Random
   end
 end
