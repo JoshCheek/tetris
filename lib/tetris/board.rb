@@ -6,5 +6,11 @@ module Tetris
       self.height        = attributes[:height]
       self.current_block = attributes[:current_block]
     end
+
+    def dup
+      super
+      yield self if block_given?
+      self
+    end
   end
 end
