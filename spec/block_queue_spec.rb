@@ -10,24 +10,22 @@ describe Tetris::BlockQueue do
   end
 
   it 'dequeues a random block definition from i,j,l,o,s,t,z' do
-    pending 'IDK wtf is going on here, keep getting the same values for seeds' do
-      queue  = described_class.new rand
-      blocks = 1000.times
-                   .map { queue, block_definition = queue.dequeue
-                          block_definition.name
-                   }
-                   .uniq
-                   .sort
-      expect(blocks).to eq [
-        i_block.name,
-        j_block.name,
-        l_block.name,
-        o_block.name,
-        s_block.name,
-        t_block.name,
-        z_block.name,
-      ]
-    end
+    queue  = described_class.new Random.new_seed
+    blocks = 1000.times
+                 .map { queue, block_definition = queue.dequeue
+                        block_definition.name
+                 }
+                 .uniq
+                 .sort
+    expect(blocks).to eq [
+      i_block.name,
+      j_block.name,
+      l_block.name,
+      o_block.name,
+      s_block.name,
+      t_block.name,
+      z_block.name,
+    ]
   end
 
   it 'can be seeded so that its randomness is predictable' do

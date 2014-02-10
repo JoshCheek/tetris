@@ -3,7 +3,7 @@ module Tetris
     def initialize(seed)
       random           = ::Random.new seed
       self.seed        = seed
-      self.next_seed   = random.rand
+      self.next_seed   = (random.rand * 1_000_000_000).to_i
       self.block_index = random.rand main_blocks.size
     end
 
