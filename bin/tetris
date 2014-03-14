@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path '../../lib', __FILE__
+
+require 'tetris/console'
+require 'time'
+
+if $stdin.tty?
+  system "stty raw"   # feed characters straight through to the program
+  system "tput civis" # hide the cursor
+end
+
+begin
+  $stdin.getc
+ensure
+  if $stdin.tty?
+    system "stty -raw"  # back to normal character processing
+    system "tput cnorm" # show the cursor
+  end
+end
