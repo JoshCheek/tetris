@@ -3,7 +3,10 @@ require 'tetris/stateful_block'
 
 module Tetris
   module DecomposeBlock
-    def self.call
+    extend self
+
+    def self.call(stateful_block)
+      decompose_block stateful_block
     end
 
     def decompose_block(stateful_block)
